@@ -28,4 +28,5 @@ public class Member {
 
     @OneToMany(mappedBy = "member") // order테이블의 member가 주인이다.
     private List<Order> orders = new ArrayList<>();
+
 }

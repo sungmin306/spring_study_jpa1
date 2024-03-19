@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test // 인메모리 디비로 접근 (테스트코드만)
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true # System.out을 통해 확인 (실무에서 쓰면안됨)
+        format_sql: true
+# 스프링부트에 위 설정들이 없으면 자동으로 메모리로 들림 위에 다 주석처리 가능
+logging.level:
+  org.hibernate.SQL: debug # 로그를 통해 확인
+  org.hibernate.orm.jdbc.bind: trace
