@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Member {
     @Column(name = "name_id")
     private Long id;
 
+    @NotEmpty // validation 검증
     private String name;
 
     @Embedded // @Embeddable 하나만 있어도 되긴함 둘다 적어주는 것이 좋음
