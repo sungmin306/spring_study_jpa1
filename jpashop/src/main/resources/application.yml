@@ -14,4 +14,4 @@ spring:
 
 logging.level:
   org.hibernate.SQL: debug # 로그를 통해 확인
-  org.hibernate.orm.jdbc.bind: trace
+#  org.hibernate.orm.jdbc.bind: trace
