@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
@@ -98,7 +99,7 @@ public class OrderRepository {
         return em.createQuery(
                 "select o from Order o" +
                         " join fetch o.member m" +
-                        " join fetch o.delivery d", Order.class
+                        " join fetch o.delivery d", Order.class // 내부에 원하는 것만 fetch join을 통해 가져옴
         ).getResultList();
     }
 }
